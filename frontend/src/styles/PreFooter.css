@@ -1,0 +1,117 @@
+.offer{
+    width: 100%;
+    height: 14vh;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
+    box-shadow: 0px -3px 6px #0000000B;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.4vh solid #5861AE;
+}
+
+.offer-main-text{
+    text-align: center;
+    font: normal normal 600 1.5rem/1.8rem Open Sans;
+    letter-spacing: 0.96px;
+    color: #5861AE;
+    opacity: 1;
+}
+
+.offer-sub-text{
+    text-align: center;
+    font: italic normal normal 0.6rem/0.8rem Open Sans;
+    letter-spacing: 0.4px;
+    color: #3D3D43;
+    opacity: 1;
+}
+
+.footer-navigation, .flex-container-socials{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-navigation{
+    width: 100%;
+    height: 25.8vh;
+    padding: 4vw;
+    column-gap: 6vw;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-heading{
+    text-align: left;
+    font: normal normal medium 40vw/5vw Avenir;
+    letter-spacing: 0.18px;
+    color: #182838;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.intro-subheading{
+    text-align: left;
+    font: normal normal normal 1vw/2vw Avenir;
+    letter-spacing: 0.6px;
+    color: #3D3D43;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.flex-item-heading{
+    text-align: center;
+    font: normal normal medium 1rem/1.5rem Avenir;
+    letter-spacing: 0.16px;
+    color: #182838;
+    text-transform: capitalize;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.flex-item{
+    text-align: left;
+    font: normal normal normal 0.8rem/1.5rem Avenir;
+    letter-spacing: 0.14px;
+    color: #182838;
+    text-transform: capitalize;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.flex-item-heading-socials{
+    text-align: left;
+    font: normal normal medium 1.13rem/1.5rem Avenir;
+    letter-spacing: 0.18px;
+    color: #182838;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.facebook-icon{
+    width: 20px;
+    height: 20px;
+    background: transparent url('../../public/images/facebook.png') 0% 0% no-repeat padding-box;
+    opacity: 0.6;
+}
+
+.instagram-icon{
+    width: 19px;
+    height: 19px;
+    background: transparent url('../../public/images/instagram.png') 0% 0% no-repeat padding-box;
+    opacity: 0.6;
+}
+
+.linkedin-icon{
+    width: 18px;
+    height: 18px;
+    background: transparent url('../../public/images/linkedin.png') 0% 0% no-repeat padding-box;
+    opacity: 0.6;
+}
+
+.flex-container-socials{
+    gap: 10px;
+}

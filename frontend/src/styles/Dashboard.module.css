@@ -1,0 +1,243 @@
+/* .container {
+  display: flex;
+  height: 100vh;
+  flex-direction: row; 
+  width: 100%;
+} 
+
+
+ .sidebar {
+   width: 60px;
+  background: #4f46e5;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 20px;
+  height: 100pvh;
+ overflow: hidden;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+
+  .mainContent {
+  flex: 1;
+  display: flex;
+  
+  flex-direction: column;
+  width: 100%;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} 
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+   border-bottom: 1px solid #d11b1b;
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0px;
+ 
+    background-color: #5a5eb9; 
+    padding: 10px 15px; 
+ 
+    display: flex;
+    align-items: center;
+}
+
+.profileImg {
+border-radius: 50%; 
+    padding-top: 0px;
+    margin-top: 0px;
+    width: 35px; 
+    height: 40px;
+    object-fit: cover;
+}
+
+.ordersSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.noOrders {
+  margin-top: 20px;
+}
+
+.createButton {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: 1px solid #4f46e5;
+  background: white;
+  color: #4f46e5;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  border-top: 1px solid #ddd;
+  color: aliceblue;
+  
+  background-color: rgb(2, 0, 5);
+} */
+
+
+
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ✅ Ensures the full viewport height */
+  position: fixed;
+}
+
+.main-content {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.sidebar {
+  width: 60px;
+ background: #4f46e5;
+ color: white;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+position: fixed;
+ gap: 30px;
+ height: 89vh;
+/* overflow: hidden; */
+position: fixed;
+bottom: 0;
+left: 0;
+}
+
+.icon {
+ cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+   border-bottom: 1px solid #d11b1b;
+  overflow: hidden;
+ 
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0px;
+ 
+    background-color: #5a5eb9; 
+    padding: 10px 15px; 
+ 
+    display: flex;
+    align-items: center;
+}
+
+.profileImg {
+border-radius: 50%; 
+    padding-top: 0px;
+    margin-top: 0px;
+    width: 35px; 
+    height: 40px;
+    object-fit: cover;
+}
+
+.ordersSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.noOrders {
+  margin-top: 20px;
+}
+
+.createButton {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: 1px solid #4f46e5;
+  background: white;
+  color: #4f46e5;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* .footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  border-top: 1px solid #ddd;
+  color: aliceblue;
+  
+  background-color: rgb(2, 0, 5);
+}  */
+
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

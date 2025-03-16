@@ -1,0 +1,39 @@
+.confirm-order-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    color: #5861AE;
+  }
+  
+  .order-summary {
+    text-align: left;
+    margin-top: 15px;
+  }
+  
+  .order-summary p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .price {
+    color: #5861AE;
+    font-weight: bold;
+  }
+  
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #5861AE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
