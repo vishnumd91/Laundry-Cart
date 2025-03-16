@@ -241,10 +241,10 @@ const initialItems = [
 ];
 
 const washTypes = [
-  { id: "wash", label: "🧼", multiplier: 1 },
-  { id: "iron", label: "🪮", multiplier: 1.2 },
-  { id: "fold", label: "🛒", multiplier: 1.5 },
-  { id: "pack", label: "🛍️", multiplier: 2 },
+  { id: "washing-machine", label: "🧼", multiplier: 1 },
+  { id: "ironing", label: "🪮", multiplier: 1.2 },
+  { id: "towel", label: "🛒", multiplier: 1.5 },
+  { id: "bleach", label: "🛍️", multiplier: 2 },
 ];
 
 const OrderTable = (order) => {
@@ -302,7 +302,7 @@ const OrderTable = (order) => {
         unitPrice: item.pricePerUnit,
         price: calculatePrice(item),
         services: item.selectedWashes.map(
-          (id) => washTypes.find((wash) => wash.id === id)?.label
+          (id) => washTypes.find((wash) => wash.id === id)?.id
         ),
       }));
 

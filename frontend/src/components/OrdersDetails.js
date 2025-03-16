@@ -119,9 +119,9 @@ function OrdersDetails() {
                 <td className="table-item">{order.store_location}</td>
                 <td className="table-item">{order.city}</td>
                 <td className="table-item">{order.store_phone}</td>
-                <td className="table-item">{order.total_item}</td>
+                <td className="table-item">{order.total_items}</td>
                 <td className="table-item" style={{ color: "#5861AE" }}>
-                  {order.price}
+                  {order.total_price}
                 </td>
                 <td
                   className="table-item"

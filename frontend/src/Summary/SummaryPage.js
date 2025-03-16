@@ -5,6 +5,7 @@ import "./SummaryPage.css";
 import axios from "axios";
 import { useUser } from "../context/user";
 import { toast } from "react-hot-toast";
+import { v4 as uuidv4 } from "uuid";
 
 const SummaryPage = ({ closeOverlay }) => {
   const location = useLocation();
@@ -55,7 +56,18 @@ const SummaryPage = ({ closeOverlay }) => {
     }
   };
 
-  console.log("Selected Store:", selectedStore);
+  console.log("Selected Store:", orderDetails);
+
+  const mapToOrderDetails = (orderDetails) => {
+    return orderDetails.map((item) => ({
+      product_type: item?.name,
+      quantity: item?.quantity,
+      price: item?.unitPrice,
+      wash_type: item?.services,
+    }));
+  };
+
+  console.log("mapped order details:", mapToOrderDetails(orderDetails));
 
   const subtotal = orderDetails.reduce((acc, item) => acc + item.price, 0);
   const pickupCharge = 90;
@@ -66,17 +78,24 @@ const SummaryPage = ({ closeOverlay }) => {
     const createOrder = async () => {
       try {
         const payload = {
-          order_id: "ORD123456",
+          order_id: `ORD${uuidv4()}`,
           user_id: userId,
-          product_type: orderDetails[0]?.name,
-          quantity: orderDetails[0]?.quantity,
-          wash_type: ["washing-machine", "ironing"],
-          price: orderDetails[0]?.unitPrice,
-          order_date_time: "2023-10-01T10:00:00Z",
+          products: mapToOrderDetails(orderDetails),
+          // product_type: orderDetails,
+          // quantity: orderDetails?.reduce((acc, item) => acc + item.quantity, 0),
+          // wash_type: ["washing-machine", "ironing"],
+          // price: orderDetails.reduce((acc, item) => acc + item.price, 0),
+          order_date_time: new Date().toISOString(),
           store_location: selectedStore?.storeLocation,
           city: selectedStore?.storeCity ?? "Andheri",
-          store_phone: 1234567890,
-          total_items: orderDetails[0]?.quantity,
+          store_phone: selectedStore?.storePhone ?? "1234567890",
+          total_items: orderDetails?.reduce(
+            (acc, item) => acc + item.quantity,
+            0
+          ),
+          sub_total: subtotal,
+          pickup_charge: pickupCharge,
+          total_price: total,
           status: "Ready to Pickup",
         };
         const response = await axios.post(

@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-// import SummaryPage from "./SummaryPage"; 
+// import SummaryPage from "./SummaryPage";
 // import { useNavigate } from "react-router-dom";
 
 // const laundryItems = [
@@ -11,12 +11,12 @@
 // ];
 
 // const OrderPage = () => {
-//   const [selectedItems, setSelectedItems] = useState([]); 
-//   // const [showSummary, setShowSummary] = useState(false); 
+//   const [selectedItems, setSelectedItems] = useState([]);
+//   // const [showSummary, setShowSummary] = useState(false);
 
 //   const handleSelect = (item, quantity) => {
 //     if (quantity > 0) {
-    
+
 //       setSelectedItems((prev) => {
 //         const existingItem = prev.find((i) => i.id === item.id);
 //         if (existingItem) {
@@ -26,11 +26,11 @@
 //         }
 //       });
 //     } else {
-  
+
 //       setSelectedItems((prev) => prev.filter((i) => i.id !== item.id));
 //     }
 //   };
-   
+
 //   const navigate = useNavigate();
 //   const goToSuccess = ()=>{
 //     navigate('/successful')
@@ -60,29 +60,61 @@
 //   )
 // };
 
-// export default OrderPage;     
+// export default OrderPage;
 // // () => setShowSummary(true)
-
-
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SummaryPage from "../Summary/SummaryPage"; 
+import SummaryPage from "../Summary/SummaryPage";
 
 const initialItems = [
-  { id: 1, name: "Shirts", pricePerUnit: 20, image: "https://m.media-amazon.com/images/I/71I-cik1CyL._AC_UL1500_.jpg" },
-  { id: 2, name: "T-Shirts", pricePerUnit: 15, image: "https://cdnp.sanmar.com/medias/sys_master/images/images/h01/h5d/8806071894046/4085-Black-5-2000LBlackFlatFront-1200W.jpg" },
-  { id: 3, name: "Trousers", pricePerUnit: 25, image: "https://www.pngmart.com/files/6/Trousers-PNG-Free-Download.png" },
-  { id: 4, name: "Jeans", pricePerUnit: 30, image: "https://www.fullbeauty.com/on/demandware.static/-/Sites-masterCatalog_Roamans/default/dw69d4ca3a/images/hi-res/0549_08475_mc_5350.jpg" },
-  { id: 5, name: "Boxers", pricePerUnit: 10, image: "https://tse3.mm.bing.net/th?id=OIP.FcKfFh47LsIlf4UM2E-Q7QHaHa&pid=Api&P=0&h=180" },
-  { id: 6, name: "Joggers", pricePerUnit: 40, image: "https://thumbs.dreamstime.com/z/runner-running-jogger-jogger-young-man-isolated-white-background-one-caucasian-runner-running-jogger-jogger-young-man-studio-169254870.jpg" },
+  {
+    id: 1,
+    name: "Shirts",
+    pricePerUnit: 20,
+    image: "https://m.media-amazon.com/images/I/71I-cik1CyL._AC_UL1500_.jpg",
+  },
+  {
+    id: 2,
+    name: "T-Shirts",
+    pricePerUnit: 15,
+    image:
+      "https://cdnp.sanmar.com/medias/sys_master/images/images/h01/h5d/8806071894046/4085-Black-5-2000LBlackFlatFront-1200W.jpg",
+  },
+  {
+    id: 3,
+    name: "Trousers",
+    pricePerUnit: 25,
+    image: "https://www.pngmart.com/files/6/Trousers-PNG-Free-Download.png",
+  },
+  {
+    id: 4,
+    name: "Jeans",
+    pricePerUnit: 30,
+    image:
+      "https://www.fullbeauty.com/on/demandware.static/-/Sites-masterCatalog_Roamans/default/dw69d4ca3a/images/hi-res/0549_08475_mc_5350.jpg",
+  },
+  {
+    id: 5,
+    name: "Boxers",
+    pricePerUnit: 10,
+    image:
+      "https://tse3.mm.bing.net/th?id=OIP.FcKfFh47LsIlf4UM2E-Q7QHaHa&pid=Api&P=0&h=180",
+  },
+  {
+    id: 6,
+    name: "Joggers",
+    pricePerUnit: 40,
+    image:
+      "https://thumbs.dreamstime.com/z/runner-running-jogger-jogger-young-man-isolated-white-background-one-caucasian-runner-running-jogger-jogger-young-man-studio-169254870.jpg",
+  },
 ];
 
 const washTypes = [
-  { id: "wash", label: "🧼", multiplier: 1 },
-  { id: "iron", label: "🪮", multiplier: 1.2 },
-  { id: "fold", label: "🛒", multiplier: 1.5 },
-  { id: "pack", label: "🛍️", multiplier: 2 },
+  { id: "washing-machine", label: "🧼", multiplier: 1 },
+  { id: "ironing", label: "🪮", multiplier: 1.2 },
+  { id: "towel", label: "🛒", multiplier: 1.5 },
+  { id: "bleach", label: "🛍️", multiplier: 2 },
 ];
 
 const OrderTable = () => {
@@ -135,13 +167,13 @@ const OrderTable = () => {
         unitPrice: item.pricePerUnit,
         price: calculatePrice(item),
         services: item.selectedWashes.map(
-          (id) => washTypes.find((wash) => wash.id === id)?.label
+          (id) => washTypes.find((wash) => wash.id === id)?.id
         ),
       }));
-  
+    console.log("Selected Items:", selectedItems);
+
     navigate("/summaryPage", { state: { orderDetails: selectedItems } });
   };
-  
 
   return (
     <div className="order-container">
